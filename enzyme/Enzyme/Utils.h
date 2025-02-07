@@ -2094,7 +2094,7 @@ addFunctionNoCapture(llvm::LLVMContext &ctx, llvm::AttributeList list,
                      size_t idx) {
 #if LLVM_VERSION_MAJOR >= 20
   return list.addParamAttribute(
-      ctx, {idx},
+      ctx, {(unsigned)idx},
       llvm::Attribute::get(ctx, llvm::Attribute::Captures,
                            llvm::CaptureInfo::none().toIntValue()));
 #else
